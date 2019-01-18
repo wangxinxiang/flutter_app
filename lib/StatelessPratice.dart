@@ -5,7 +5,7 @@ class DemoWidget extends StatelessWidget {
 
   final String text;
 
-  const DemoWidget({Key key, this.text}) : super(key: key);
+  const DemoWidget({Key key, @required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
