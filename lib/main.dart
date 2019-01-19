@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/practice/CardPractice.dart';
+import 'package:flutter_app/practice/RadioPractice.dart';
 import 'MyFirstHomePage.dart';
 
 void main() {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Welcome to Flutter',
       theme: new ThemeData(primaryColor: Colors.blue),
-      home: new CardPractice()
+      home: new RadioPractice()
     );
   }
 }
