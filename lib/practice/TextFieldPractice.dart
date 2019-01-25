@@ -34,7 +34,11 @@ class _TextFieldPracticeState extends State<TextFieldPractice> {
       appBar: new AppBar(title: new Text('2333'),),
       body: new Padding(
         padding: EdgeInsets.all(20),
-        child: _buildText(context),
+        child: Theme(
+            data: Theme.of(context).copyWith(
+              brightness: Brightness.dark,
+            ),
+            child: _buildText(context)),
       ),
     );
   }
@@ -46,6 +50,7 @@ class _TextFieldPracticeState extends State<TextFieldPractice> {
         TextField(
           controller: _nameController,
           autofocus: true,
+          keyboardType: TextInputType.numberWithOptions(),
           decoration: InputDecoration(
             labelText: '用户名',
             hintText: '用户名或邮箱',

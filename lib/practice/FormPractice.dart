@@ -90,6 +90,7 @@ class _FormPracticeState extends State<FormPractice> {
         children: <Widget>[
           Expanded(
             child: RaisedButton(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 padding: EdgeInsets.all(15),
                 child: Text('登陆'),
                 color: Theme.of(context).primaryColor,

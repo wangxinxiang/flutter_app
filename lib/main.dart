@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/practice/RadioPractice.dart';
+import 'package:flutter_app/practice/ListenerPractice.dart';
+import 'package:flutter_app/demo/PictureView.dart';
+
 import 'MyFirstHomePage.dart';
 
 void main() {
@@ -26,11 +28,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-//    return ListViewPractice();
+//    return CustomScrollViewTestRoute();
     return new MaterialApp(
       title: 'Welcome to Flutter',
       theme: new ThemeData(primaryColor: Colors.blue),
-      home: new RadioPractice()
+      home: new PictureView('images/pic6.jpg'),
     );
   }
 }
