@@ -28,30 +28,44 @@ class MyFirstRandomWordState extends State<MyFirstHomePage> {
   }
 
   void _pushSaved() {
-    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-      final tiles = _saved.map(
-        (pair) {
-          return new ListTile(
-            title: new Text(
-              pair.asPascalCase,
-              style: _biggerFont,
-            ),
-          );
-        },
-      );
+    final tiles = _saved.map(
+          (pair) {
+        return new ListTile(
+          title: new Text(
+            pair.asPascalCase,
+            style: _biggerFont,
+          ),
+        );
+      },
+    );
 
-      final divided = ListTile.divideTiles(
-        context: context,
-        tiles: tiles,
-      ).toList();
+    final divided = ListTile.divideTiles(
+      context: context,
+      tiles: tiles,
+    ).toList();
 
-      return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Saved Suggestions'),
-        ),
-        body: new ListView(children: divided),
-      );
-    }));
+    Navigator.push(context,
+        PageRouteBuilder(
+            pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+              return FadeTransition(opacity: animation,
+                child: Scaffold(
+                  appBar: new AppBar(
+                    title: new Text('Saved Suggestions'),
+                  ),
+                  body: new ListView(children: divided),
+                )
+              );
+            },
+        )
+    );
+//    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+//      return new Scaffold(
+//        appBar: new AppBar(
+//          title: new Text('Saved Suggestions'),
+//        ),
+//        body: new ListView(children: divided),
+//      );
+//    }));
   }
 
   Widget _buildRow(WordPair pair) {

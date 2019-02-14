@@ -105,6 +105,13 @@ class _InfiniteLIstViewState extends State<InfiniteListView> {
               child: NotificationListener<ScrollNotification>(
                 ///滚动监听
                 onNotification: (ScrollNotification notification) {
+                  switch(notification.runtimeType) {
+                    case ScrollStartNotification : print('开始滚动'); break;
+                    case ScrollUpdateNotification: print("正在滚动"); break;
+                    case ScrollEndNotification: print("滚动停止"); break;
+                    case OverscrollNotification: print("滚动到边界"); break;
+                  }
+
                   double progress = notification.metrics.pixels /
                       notification.metrics.maxScrollExtent;
                   setState(() {

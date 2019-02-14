@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/practice/ListenerPractice.dart';
+import 'package:flutter_app/practice/StaggerAnimationDemo.dart';
 import 'package:flutter_app/demo/PictureView.dart';
 
 import 'MyFirstHomePage.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Welcome to Flutter',
       theme: new ThemeData(primaryColor: Colors.blue),
-      home: new PictureView('images/pic6.jpg'),
+      home: new StaggerDemo(),
     );
   }
 }
