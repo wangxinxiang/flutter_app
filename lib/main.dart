@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/practice/StaggerAnimationDemo.dart';
+import 'package:flutter_app/widget/CustonPaint.dart';
 import 'package:flutter_app/demo/PictureView.dart';
 
 import 'MyFirstHomePage.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Welcome to Flutter',
       theme: new ThemeData(primaryColor: Colors.blue),
-      home: new StaggerDemo(),
+      home: new CustomPaintRoute(),
     );
   }
 }
